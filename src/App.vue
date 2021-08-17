@@ -1,18 +1,15 @@
 <template>
   <div id="app">
-    <UserCard />
+    <PhotoRedactor />
   </div>
 </template>
 
 <script>
-/*import MyComponent from "@/components/MyComponent";*/
-import UserCard from "@/components/UserCard";
+import PhotoRedactor from "./components/PhotoRedactor";
 export default {
   name: 'App',
   components: {
-    UserCard,
-    //MyComponent
-
+    PhotoRedactor
   }
 }
 </script>
