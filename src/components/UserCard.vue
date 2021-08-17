@@ -67,8 +67,18 @@ export default {
   methods: {
     getFullName(user) {
         return `${user.firstName} ${user.secondName} ${user.lastName}`.toUpperCase()
-      }
+    },
+    loadUsers(page) {
+      console.log(`загрузка пользователей: страница ${page}`)
+    }
+  },
+  // analog - React.useEffect
+  watch: {
+    currentPage(page) {
+      this.loadUsers(page)
+    }
   }
+
 }
 </script>
 
