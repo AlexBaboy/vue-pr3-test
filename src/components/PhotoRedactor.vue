@@ -21,7 +21,7 @@
                   :class="imgFilters.small ? 'active' : ''"
                   @click="imgFilters.small = !imgFilters.small">Уменьшить</button>
         </div>
-        <button @click="isCatVisible = !isCatVisible">показать/спрятать</button>
+        <button @click="isCatVisible = !isCatVisible">{{ !isCatVisible ? 'показать' : 'спрятать' }}</button>
         <h2>Размеры</h2>
         <div class="btn-group">
           <label>
