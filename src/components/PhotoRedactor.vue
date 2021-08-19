@@ -17,9 +17,6 @@
           <button type="button"
                   :class="imgFilters.border ? 'active' : ''"
                   @click="imgFilters.border = !imgFilters.border">Рамка</button>
-          <button type="button"
-                  :class="imgFilters.small ? 'active' : ''"
-                  @click="imgFilters.small = !imgFilters.small">Уменьшить</button>
         </div>
         <button @click="isCatVisible = !isCatVisible">{{ !isCatVisible ? 'показать' : 'спрятать' }}</button>
         <h2>Размеры</h2>
@@ -97,7 +94,7 @@ export default {
       border: 5px dashed #464646;
     }
     &.small {
-      width: 400px;
+      width: 100px;
     }
   }
   button {

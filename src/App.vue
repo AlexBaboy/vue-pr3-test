@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <PhotoRedactor />
+    <ProductList />
   </div>
 </template>
 
 <script>
-import PhotoRedactor from "./components/PhotoRedactor";
+import ProductList from "./components/Products/ProductList";
 export default {
   name: 'App',
   components: {
-    PhotoRedactor
+    ProductList
   }
 }
 </script>
