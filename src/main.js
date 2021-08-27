@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import simplePlugin from "@/plugins/simplePlugin";
+import VueRouter from 'vue-router'
+import router from './router/index'
+import './assets/styles/main.scss'
 
-import marked from 'marked'
-
-Vue.use(simplePlugin)
-Vue.filter('marked',marked)
+Vue.use(VueRouter)
 
 new Vue({
   render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router
+})

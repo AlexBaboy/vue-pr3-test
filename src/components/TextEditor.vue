@@ -1,7 +1,7 @@
 <template>
   <div class="text-editor">
     <textarea v-model="text"></textarea>
-    <div class="output-text" :inner-html.prop="text | marked">
+    <div class="output-text" :inner-html.prop="text">
     </div>
   </div>
 </template>
