@@ -22,6 +22,22 @@
       <p class="section__title">Режисеры:</p>
       <p class="section__description">{{ film.directors.join(', ') }}</p>
     </div>
+    <div class="line" />
+
+    <div class="review">
+      <h3>Смотрели данный фильм?</h3>
+      <p>Оставьте отзыв:</p>
+      <ul>
+        <li
+            v-for="reaction in reactions"
+            :key="reaction.id"
+            >
+          <button type="button" class="btn btn-outline-light">
+            {{reaction.title}}
+          </button>
+        </li>
+      </ul>
+    </div>
     
   </div>
 </div>
@@ -30,6 +46,7 @@
 
 <script>
 import films from '../mocks/films'
+import { mapGetters } from 'vuex'
 
 export default {
   data() {
@@ -41,6 +58,13 @@ export default {
     const film = films.find(film => film.id === this.$route.params.id)
     if (film) {
       this.film = film
+    }
+  },
+  computed: {
+    ...mapGetters({
+      getReactions: 'reactions/getReactions'}),
+    reactions() {
+      return this.getReactions
     }
   }
 }
@@ -87,6 +111,24 @@ export default {
       color: #ffffff;
       font-size: 18px;
       line-height: 30px;
+    }
+  }
+  .review {
+    h3 {
+      color: #ffffff;
+    }
+    p {
+      font-weight: 600;
+      font-size: 18px;
+      color: #EB5804;
+    }
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      li {
+        margin-right: 15px;
+      }
     }
   }
 }
