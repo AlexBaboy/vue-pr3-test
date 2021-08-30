@@ -3,11 +3,20 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router/index'
 import store from './store/index'
-import './assets/styles/main.scss'
+
+import VModal from 'vue-js-modal'
+
+import ApiPlugin from './plugins/api'
+import LoadPlugin from './plugins/load'
 
 Vue.use(VueRouter)
+Vue.use(VModal)
+Vue.use(ApiPlugin)
+Vue.use(LoadPlugin)
 
-new Vue({
+import '@/assets/styles/main.scss';
+
+export default new Vue({
   render: h => h(App),
   el: '#app',
   router,
